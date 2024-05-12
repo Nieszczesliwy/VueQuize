@@ -129,7 +129,7 @@ button:active {
   margin: 2em auto;
   padding: 2em;
   max-width: 600px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(164, 164, 164);
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }

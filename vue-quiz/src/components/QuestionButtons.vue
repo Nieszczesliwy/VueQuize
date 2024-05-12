@@ -68,7 +68,7 @@ div{
 }
 
 .selected {
-  background-color: #2196f3;
+  background-color: #078623;
 }
 
 .container {
@@ -76,8 +76,13 @@ div{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 2em auto;
+  padding: 2em;
+  max-width: 600px;
+  background-color: rgb(164, 164, 164);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
-
 button {
   padding: 1rem 1rem;
   margin: 0.5rem auto; 
