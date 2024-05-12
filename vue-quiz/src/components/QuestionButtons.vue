@@ -13,15 +13,6 @@
     <div v-if="selectedQuestions.length > 0">
       <button @click="startTest">Start Test</button>
     </div>
-
-    <div v-if="testStarted">
-      <h3>Test Started with these questions:</h3>
-      <ul>
-        <li v-for="(question, index) in selectedQuestions" :key="index">
-          {{ question }}
-        </li>
-      </ul>
-    </div>
   </div>
 </template>
 
@@ -36,7 +27,6 @@ export default {
         "Вкажіть тег для посилання?"
       ],
       selectedQuestions: [],
-      testStarted: false
     };
   },
   methods: {
@@ -49,28 +39,27 @@ export default {
       }
     },
     startTest() {
-    if (this.selectedQuestions.length > 0) {
-      this.testStarted = true;
-      this.$router.push({ 
-        name: 'TestComponent', 
-        params: { selectedQuestions: this.selectedQuestions } // Pass selectedQuestions as a param
-      });
-    }
-  }
-  }
+      if (this.selectedQuestions.length > 0) {
+        this.$router.push({
+          name: "TestComponent",
+          query: { selectedQuestions: this.selectedQuestions.join(",") }, // Send questions as a comma-separated string
+        });
+      }
+    },
+  },
 };
 </script>
 
 <style>
 .selected {
-  background-color: #2196F3; /* Blue */
+  background-color: #2196f3; /* Blue */
 }
 
 button {
   margin: 5px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   cursor: pointer;
